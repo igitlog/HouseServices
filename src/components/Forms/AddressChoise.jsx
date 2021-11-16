@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { AutoComplete } from 'antd';
-import Title from '../Title';
+import React from "react";
+import { AutoComplete } from "antd";
+import Title from "../Title";
 
 const AddressChoise = ({ props }) => {
   function choisedStreet(street) {
@@ -12,7 +12,7 @@ const AddressChoise = ({ props }) => {
         props.setChoisedStreet(ChangeStreetId);
       }
     }
-  };
+  }
   function choisedHouse(house) {
     if (house) {
       console.log(`selected ${house}`);
@@ -22,7 +22,7 @@ const AddressChoise = ({ props }) => {
         props.setChoisedHouse(ChangeHouseId);
       }
     }
-  };
+  }
   function choisedHouseFlat(flat) {
     if (flat) {
       console.log(`selected ${flat}`);
@@ -32,7 +32,7 @@ const AddressChoise = ({ props }) => {
         props.setChoisedHouseFlats(ChangeFlatId);
       }
     }
-  };
+  }
 
   return (
     <>
@@ -42,9 +42,7 @@ const AddressChoise = ({ props }) => {
           style={{
             width: 200,
           }}
-
           onChange={choisedStreet}
-
           options={props.streets}
           placeholder="Выбрать улицу"
           filterOption={(inputValue, option) =>
@@ -55,9 +53,7 @@ const AddressChoise = ({ props }) => {
           style={{
             width: 200,
           }}
-
           onChange={choisedHouse}
-
           options={props.houses}
           placeholder="Выбрать дом"
           filterOption={(inputValue, option) =>
@@ -68,9 +64,7 @@ const AddressChoise = ({ props }) => {
           style={{
             width: 200,
           }}
-
           onChange={choisedHouseFlat}
-
           options={props.flats}
           placeholder="Выбрать квартиру"
           filterOption={(inputValue, option) =>

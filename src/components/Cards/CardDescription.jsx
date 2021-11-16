@@ -1,12 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const CardDescription = ({ client }) => {
   return (
     <div>
       Телефон: {client.phone}
-      <p>
-       Почта: {client.email}
-      </p>
+      <p>Почта: {client.email}</p>
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import { Divider } from 'antd';
-import React from 'react';
-import AddressChoise from '../../Forms/AddressChoise';
-import Residents from './Residents/Residents';
+import { Divider } from "antd";
+import React from "react";
+import AddressChoise from "../../Forms/AddressChoise";
+import Residents from "./Residents/Residents";
 
 const WorkWithUsersPage = ({ props }) => {
   return (
