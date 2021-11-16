@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "../../../Title";
-import UserCard from "../../../Cards/UserCard";
-import AddUserPop from "../../../Popups/AddUserPop";
+import Title from "components/Title";
+import UserCard from "components/Cards/UserCard";
+import AddUserPop from "components/Popups/AddUserPop.jsx";
 import "./ResidentsStyle.css";
 
 const Residents = ({ props }) => {
