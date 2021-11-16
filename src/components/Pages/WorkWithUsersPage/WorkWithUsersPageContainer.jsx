@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import WorkWithUsersPage from "./WorkWithUsersPage";
 import { getStreets } from "../../../redux/thunks/getStreets";
+import { setStreetAddress } from "../../../redux/actions/addressFormActions";
+import { setHouseAddress } from "../../../redux/actions/addressFormActions";
+import { setFlatAddress } from "../../../redux/actions/addressFormActions";
 import { getHouse } from "../../../redux/thunks/getHouse";
 import { getClients } from "../../../redux/thunks/getClients";
 import { postNewClient } from "../../../redux/thunks/postClient";
@@ -38,6 +41,7 @@ let mstp = (state) => {
     flats: state.setAddressChoiseReducer.flats,
     choisedFlat: state.setAddressChoiseReducer.choisedFlat,
     clients: state.setClientsReducer.clients,
+    address: state.setAddressChoiseReducer.address,
   };
 };
 
@@ -45,6 +49,9 @@ export default connect(mstp, {
   setChoisedStreet,
   setChoisedHouse,
   setChoisedHouseFlats,
+  setStreetAddress,
+  setHouseAddress,
+  setFlatAddress,
   getStreets,
   getHouse,
   getHouseFlats,

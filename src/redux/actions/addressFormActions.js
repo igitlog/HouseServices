@@ -1,5 +1,23 @@
-import { SETSTREETS, SETHOUSE, SETHOUSEFLATS, SETCHOISEDSTREET, SETCHOISEDHOUSE, SETCHOISEDHOUSEFLATS } from "../types";
+import { SETSTREETS, SETHOUSE, SETHOUSEFLATS, SETCHOISEDSTREET, SETCHOISEDHOUSE, SETCHOISEDHOUSEFLATS, SETSTREETADDRESS, SETHOUSEADDRESS, SETFLATADDRESS } from "../types";
 
+export function setStreetAddress(payload) {
+  return {
+    type: SETSTREETADDRESS,
+    payload
+  }
+};
+export function setHouseAddress(payload) {
+  return {
+    type: SETHOUSEADDRESS,
+    payload
+  }
+};
+export function setFlatAddress(payload) {
+  return {
+    type: SETFLATADDRESS,
+    payload
+  }
+};
 export function setStreet(payload) {
   return {
     type: SETSTREETS,

@@ -1,4 +1,4 @@
-import { SETSTREETS, SETHOUSE, SETHOUSEFLATS, SETCHOISEDSTREET, SETCHOISEDHOUSE, SETCHOISEDHOUSEFLATS } from "../../types";
+import { SETSTREETS, SETHOUSE, SETHOUSEFLATS, SETCHOISEDSTREET, SETCHOISEDHOUSE, SETCHOISEDHOUSEFLATS, SETSTREETADDRESS, SETHOUSEADDRESS, SETFLATADDRESS } from "../../types";
 const initialState = {
   streets: [],
   choisedStreet: null,
@@ -6,9 +6,29 @@ const initialState = {
   choisedHouse: null,
   flats: [],
   choisedFlat: null,
+  address: {
+    streetName: '',
+    houseName: '',
+    flatName: '',
+  },
 }
 export const setAddressChoiseReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SETSTREETADDRESS:
+      return {
+        ...state,
+        address: { ...state.address, streetName: action.payload }
+      }
+    case SETHOUSEADDRESS:
+      return {
+        ...state,
+        address: { ...state.address, houseName: action.payload }
+      }
+    case SETFLATADDRESS:
+      return {
+        ...state,
+        address: { ...state.address, flatName: action.payload }
+      }
     case SETSTREETS:
       return {
         ...state,

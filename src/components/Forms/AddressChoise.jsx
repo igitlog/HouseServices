@@ -5,28 +5,35 @@ import Title from "../Title";
 const AddressChoise = ({ props }) => {
   function choisedStreet(street) {
     if (street) {
-      const ChangeStreet = props.streets.find((el) => el.name == street);
-      if (ChangeStreet) {
-        const ChangeStreetId = ChangeStreet.id;
-        props.setChoisedStreet(ChangeStreetId);
+      const changeStreet = props.streets.find((el) => el.name === street);
+      if (changeStreet) {
+        const changeStreetId = changeStreet.id;
+        props.setChoisedStreet(changeStreetId);
+        props.setChoisedHouse(null);
+        props.setChoisedHouseFlats(null);
+        props.setStreetAddress(changeStreet.name);
       }
     }
   }
   function choisedHouse(house) {
     if (house) {
-      const ChangeHouse = props.houses.find((el) => el.name == house);
-      if (ChangeHouse) {
-        const ChangeHouseId = ChangeHouse.id;
-        props.setChoisedHouse(ChangeHouseId);
+      const changeHouse = props.houses.find((el) => el.name == house);
+      if (changeHouse) {
+        const changeHouseId = changeHouse.id;
+        props.setChoisedHouse(changeHouseId);
+        props.setChoisedHouseFlats(null);
+        props.setHouseAddress(changeHouse.name);
       }
     }
   }
+
   function choisedHouseFlat(flat) {
     if (flat) {
-      const ChangeFlat = props.flats.find((el) => el.name == flat);
-      if (ChangeFlat) {
-        const ChangeFlatId = ChangeFlat.id;
-        props.setChoisedHouseFlats(ChangeFlatId);
+      const changeFlat = props.flats.find((el) => el.name == flat);
+      if (changeFlat) {
+        const changeFlatId = changeFlat.id;
+        props.setChoisedHouseFlats(changeFlatId);
+        props.setFlatAddress(changeFlat.name);
       }
     }
   }
@@ -40,33 +47,48 @@ const AddressChoise = ({ props }) => {
         }}
         onChange={choisedStreet}
         options={props.streets}
-        placeholder="Выбрать улицу"
+        placeholder="Улица"
         filterOption={(inputValue, option) =>
           option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
         }
       />
-      <AutoComplete
-        style={{
-          width: 200,
-        }}
-        onChange={choisedHouse}
-        options={props.houses}
-        placeholder="Выбрать дом"
-        filterOption={(inputValue, option) =>
-          option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-        }
-      />
-      <AutoComplete
-        style={{
-          width: 200,
-        }}
-        onChange={choisedHouseFlat}
-        options={props.flats}
-        placeholder="Выбрать квартиру"
-        filterOption={(inputValue, option) =>
-          option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
-        }
-      />
+      {props.choisedStreet === null ? (
+        "←Введите улицу"
+      ) : (
+        <AutoComplete
+          style={{
+            width: 200,
+          }}
+          onChange={choisedHouse}
+          options={props.houses}
+          value={""}
+          placeholder="Дом"
+          filterOption={(inputValue, option) =>
+            option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+          }
+        />
+      )}
+      {props.choisedHouse !== null ? (
+        <AutoComplete
+          style={{
+            width: 200,
+          }}
+          onChange={choisedHouseFlat}
+          options={props.flats}
+          value={""}
+          placeholder="Квартира"
+          filterOption={(inputValue, option) =>
+            option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+          }
+        />
+      ) : props.choisedStreet !== null ? (
+        "←Выберите дом"
+      ) : (
+        ""
+      )}
+      {props.choisedFlat === null && props.choisedHouse !== null
+        ? "←Выберите квартиру"
+        : ""}
     </>
   );
 };

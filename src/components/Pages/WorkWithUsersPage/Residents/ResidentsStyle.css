@@ -5,6 +5,8 @@
 .title-wrapper {
   display: flex;
   justify-content:space-around;
+  margin: 25px;
+  font-size: 20px;
 }
 
 .residentsCard-wrapper {
