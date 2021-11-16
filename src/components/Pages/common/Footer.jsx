@@ -1,8 +1,9 @@
 import React from "react";
+import './FooterStyle.css'
 
 const Footer = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className = 'footer'>
       2021 © IGITLOG
     </div>
   );

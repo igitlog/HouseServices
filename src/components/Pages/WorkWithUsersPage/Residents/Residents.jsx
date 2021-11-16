@@ -2,30 +2,21 @@ import React from "react";
 import Title from "../../../Title";
 import UserCard from "../../../Cards/UserCard";
 import AddUserPop from "../../../Popups/AddUserPop";
+import "./ResidentsStyle.css";
 
 const Residents = ({ props }) => {
+  console.log(props);
   return (
-    <div style={{ margin: "25px" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-      >
+    <div className="residents-wrapper">
+      <div className="title-wrapper">
         <Title title="Жильцы" />
         <AddUserPop props={props} />
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
+      <div className="residentsCard-wrapper">
         {props.clients !== null && props.clients !== "" ? (
           props.clients.map((client) => (
             <UserCard
-              key={Math.random(new Date())}
+              key={client.id}
               props={props}
               client={client}
             />

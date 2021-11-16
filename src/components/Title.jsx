@@ -1,7 +1,8 @@
 import React from "react";
+import "./TitleStyle.css";
 
 const Title = (props) => {
-  return <div style={{ padding: "10px", fontSize: "20px" }}>{props.title}</div>;
+  return <div className="title">{props.title}</div>;
 };
 
 export default Title;

@@ -14,7 +14,6 @@ const UserCard = ({ props, client }) => {
   return (
     <div>
       <Card
-        style={{ width: 300 }}
         actions={[
           <DeleteOutlined onClick={handlerDelete} key="setting" />,
           <PutUserPop props={props} client={client} />,

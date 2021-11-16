@@ -1,0 +1,14 @@
+.residents-wrapper {
+  margin: 25px;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content:space-around;
+}
+
+.residentsCard-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
