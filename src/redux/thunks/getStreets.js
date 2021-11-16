@@ -1,5 +1,5 @@
-import { RequestAPI } from "../../../api/api"
-import { setStreet } from "../../actions/addressFormActions"
+import { RequestAPI } from "../../api/api"
+import { setStreet } from "../actions/addressFormActions"
 
 export const getStreets = () => (dispatch) => {
   RequestAPI.getStreets()

@@ -1,5 +1,5 @@
-import { RequestAPI } from "../../../api/api"
-import { setHouse } from "../../actions/addressFormActions"
+import { RequestAPI } from "../../api/api"
+import { setHouse } from "../actions/addressFormActions"
 
 export const getHouse = (id) => (dispatch) => {
   RequestAPI.getHouse(id)

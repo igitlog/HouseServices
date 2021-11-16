@@ -5,7 +5,6 @@ import AddUserPop from "components/Popups/AddUserPop.jsx";
 import "./ResidentsStyle.css";
 
 const Residents = ({ props }) => {
-  console.log(props);
   return (
     <div className="residents-wrapper">
       <div className="title-wrapper">

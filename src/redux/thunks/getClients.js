@@ -1,5 +1,5 @@
-import { HousingStockAPI } from "../../../api/api"
-import { setClients } from "../../actions/clientActions"
+import { HousingStockAPI } from "../../api/api"
+import { setClients } from "../actions/clientActions"
 
 export const getClients = (id) => (dispatch) => {
   if (id) {

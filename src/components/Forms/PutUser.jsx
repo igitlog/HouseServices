@@ -11,7 +11,6 @@ const validateMessages = {
 const PutUser = ({ props, client }) => {
   const onFinish = (client) => {
     props.putThisClient(client);
-    console.log(client, props);
   };
 
   return (
